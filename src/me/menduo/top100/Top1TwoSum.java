@@ -10,7 +10,7 @@ import java.util.Map;
  * @date: Create in 20:30 2017/11/14
  * @motified by:
  */
-public class TwoSum_1 {
+public class Top1TwoSum {
     /**
      *  Given an array of integers, return indices of the two numbers such that they add up to a specific target.
      *  You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -47,7 +47,7 @@ public class TwoSum_1 {
 
 
     public static void main(String[] args) {
-        TwoSum_1 ts = new TwoSum_1();
+        Top1TwoSum ts = new Top1TwoSum();
         int[] nums = {3,2,4};
         int target = 6;
         int[] result = ts.twoSum(nums,target);
