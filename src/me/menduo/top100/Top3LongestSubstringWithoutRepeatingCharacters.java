@@ -54,8 +54,9 @@ public class Top3LongestSubstringWithoutRepeatingCharacters {
                 // 下一次为a,又重复,hashmap中位置为0,如果不比较现在的i和要移动的i的位置，i就会从2变为1，窗口就会回去，导致结果变大
                 i=Math.max(h.get(s.charAt(j))+1,i);
             }
-            h.put(s.charAt(j),j++);
-            ans = Math.max(ans,j-i);
+            h.put(s.charAt(j),j+1);
+            ans = Math.max(ans,j-i+1);
+            j++;
         }
 
         return ans;
