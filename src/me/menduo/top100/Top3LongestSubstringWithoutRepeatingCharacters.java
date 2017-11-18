@@ -89,5 +89,6 @@ public class Top3LongestSubstringWithoutRepeatingCharacters {
         System.out.println(t3.lengthOfLongestSubstring_3(s1));
         System.out.println(t3.lengthOfLongestSubstring_3(s2));
         System.out.println(t3.lengthOfLongestSubstring_3(s3));
+        
     }
 }
