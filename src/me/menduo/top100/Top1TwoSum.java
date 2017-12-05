@@ -52,6 +52,7 @@ public class Top1TwoSum {
         int target = 6;
         int[] result = ts.twoSum(nums,target);
         System.out.println(Arrays.toString(result));
+        System.out.println("hello mooctest!");
     }
     
 }
