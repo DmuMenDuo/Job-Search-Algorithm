@@ -53,4 +53,5 @@ public class Top1TwoSum {
         int[] result = ts.twoSum(nums,target);
         System.out.println(Arrays.toString(result));
     }
+    
 }
