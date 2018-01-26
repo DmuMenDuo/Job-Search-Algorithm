@@ -17,10 +17,9 @@ public class Top7ReverseInteger {
         while(tmp!=0){
             int u = tmp % 10;
             tmp = tmp / 10;
-            result = (result+u)*10;
+            result = result*10+u;
 
         }
-        result/=10;
         if(result>Integer.MAX_VALUE && signal){
             return 0;
         }else if(result<Integer.MIN_VALUE){
@@ -28,6 +27,19 @@ public class Top7ReverseInteger {
         }else {
             return (int)result;
         }
+    }
+    public int reverse2(int x) {
+        int result=0;
+        while(x!=0){
+            int u = x % 10;
+            int newresult = result*10 +u;
+            if((newresult-u)/10 !=result){
+                return 0;
+            }
+            result = newresult;
+            x = x / 10;
+        }
+        return result;
     }
     public static void main(String[] args) {
         int eg1 = 1534236469;
@@ -38,11 +50,11 @@ public class Top7ReverseInteger {
         int eg6 = 1534236469;
 
         Top7ReverseInteger top7ReverseInteger = new Top7ReverseInteger();
-        System.out.println(top7ReverseInteger.reverse(eg1));
-        System.out.println(top7ReverseInteger.reverse(eg2));
-        System.out.println(top7ReverseInteger.reverse(eg3));
-        System.out.println(top7ReverseInteger.reverse(eg4));
-        System.out.println(top7ReverseInteger.reverse(eg5));
-        System.out.println(top7ReverseInteger.reverse(eg6));
+        System.out.println(top7ReverseInteger.reverse2(eg1));
+        System.out.println(top7ReverseInteger.reverse2(eg2));
+        System.out.println(top7ReverseInteger.reverse2(eg3));
+        System.out.println(top7ReverseInteger.reverse2(eg4));
+        System.out.println(top7ReverseInteger.reverse2(eg5));
+        System.out.println(top7ReverseInteger.reverse2(eg6));
     }
 }
