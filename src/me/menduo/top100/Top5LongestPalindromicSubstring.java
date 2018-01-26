@@ -2,7 +2,7 @@ package me.menduo.top100;
 
 public class Top5LongestPalindromicSubstring {
 
-    public String longestPalindrome(String s) {
+    private String longestPalindrome(String s) {
         int start=0,end=0;
         for(int i=0;i<s.length();i++){
             int len1 = findPalindrome(s,i,i);
@@ -16,9 +16,9 @@ public class Top5LongestPalindromicSubstring {
         return s.substring(start,end+1);
 
     }
-    int findPalindrome(String s,int l,int r){
+    private int findPalindrome(String s,int l,int r){
         while(l>=0&&r<s.length()&&s.charAt(l)==s.charAt(r)){
-            //这里l多减了,r多加了，所以最后结果要减2 r-l+1-2 = r-l-1;
+            //这里l多减了,r多加了，所以最后return结果要减2 r-l+1-2 = r-l-1;
             l--;
             r++;
         }
