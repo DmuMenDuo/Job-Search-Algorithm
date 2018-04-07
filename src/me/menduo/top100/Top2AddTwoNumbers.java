@@ -75,9 +75,3 @@ public class Top2AddTwoNumbers {
     }
 
 }
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-}
