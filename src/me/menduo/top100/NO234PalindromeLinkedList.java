@@ -50,4 +50,5 @@ public class NO234PalindromeLinkedList {
 
         return true;
     }
+
 }
