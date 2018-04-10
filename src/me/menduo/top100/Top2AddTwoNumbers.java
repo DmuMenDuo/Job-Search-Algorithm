@@ -1,6 +1,6 @@
 package me.menduo.top100;
 
-import java.util.List;
+import me.menduo.top100.struct.ListNode;
 
 /**
  * @author: menduo

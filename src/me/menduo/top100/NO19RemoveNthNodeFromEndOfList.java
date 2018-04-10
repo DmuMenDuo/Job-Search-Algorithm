@@ -1,5 +1,7 @@
 package me.menduo.top100;
 
+import me.menduo.top100.struct.ListNode;
+
 public class NO19RemoveNthNodeFromEndOfList {
 
 

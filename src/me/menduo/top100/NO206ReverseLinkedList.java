@@ -1,6 +1,7 @@
 package me.menduo.top100;
 
-import java.util.List;
+import me.menduo.top100.struct.ListNode;
+
 import java.util.Stack;
 
 public class NO206ReverseLinkedList {
