@@ -23,7 +23,7 @@ public class NO98ValidateBinarySearchTree {
 
     }
 
-    public void middleB(TreeNode root,List x){
+    private void middleB(TreeNode root,List x){
         if(root.left!=null)
             middleB(root.left,x);
         x.add(root.val);
@@ -33,10 +33,9 @@ public class NO98ValidateBinarySearchTree {
     }
 
     public boolean isValidBST2(TreeNode root) {
-        if(root ==null) return true;
-        return check(root,Long.MIN_VALUE,Long.MAX_VALUE);
+        return root == null || check(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-    public boolean check(TreeNode root,long left,long right) {
+    private boolean check(TreeNode root,long left,long right) {
         if(root == null) return true;
         if(root.val<=left||root.val>=right) return false;
         return  check(root.left,left,root.val)&&check(root.right,root.val,right);
