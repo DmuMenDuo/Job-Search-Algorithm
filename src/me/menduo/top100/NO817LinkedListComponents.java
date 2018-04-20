@@ -5,7 +5,12 @@ import me.menduo.top100.struct.ListNode;
 import java.util.HashSet;
 
 public class NO817LinkedListComponents {
-
+    /**
+     * 有更快的
+     * @param head
+     * @param G
+     * @return
+     */
     public int numComponents(ListNode head, int[] G) {
         HashSet<Integer> set = new HashSet();
         for(int i=0;i<G.length;i++){
