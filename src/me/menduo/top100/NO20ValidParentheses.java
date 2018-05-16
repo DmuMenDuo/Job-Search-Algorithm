@@ -18,10 +18,7 @@ public class NO20ValidParentheses {
             else
                 stack.pop();
         }
-        if (stack.isEmpty())
-            return true;
-        else
-            return false;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
