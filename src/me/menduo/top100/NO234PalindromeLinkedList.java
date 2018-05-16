@@ -21,9 +21,9 @@ public class NO234PalindromeLinkedList {
     }
 
     public boolean isPalindrome(ListNode head) {
-        if(head == null) return true;
-        ListNode slow = head,fast=head;
-        while(fast.next!=null&&fast.next.next!=null){
+        if (head == null) return true;
+        ListNode slow = head, fast = head;
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -33,15 +33,15 @@ public class NO234PalindromeLinkedList {
         ListNode pre = null;
 
         ListNode tmp;
-        while(current!=null){
+        while (current != null) {
             tmp = current.next;
             current.next = pre;
             pre = current;
             current = tmp;
         }
-        while(head!=null&&pre!=null){
-            if(head.val !=pre.val){
-                return  false;
+        while (head != null && pre != null) {
+            if (head.val != pre.val) {
+                return false;
             }
             head = head.next;
             pre = pre.next;
