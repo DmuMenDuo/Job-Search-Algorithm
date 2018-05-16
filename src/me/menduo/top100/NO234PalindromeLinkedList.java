@@ -30,7 +30,6 @@ public class NO234PalindromeLinkedList {
         ListNode second = slow.next;
         ListNode current = second;
         slow.next = null;
-
         ListNode pre = null;
 
         ListNode tmp;
