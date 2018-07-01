@@ -32,7 +32,7 @@ public class NO17LetterCombinationsOfAPhoneNumber {
         return result;
     }
 
-    public void comb(List<String> result, int[] array, char[][] map, String tmp, int x) {
+    private void comb(List<String> result, int[] array, char[][] map, String tmp, int x) {
         if (x == array.length) {
             result.add(tmp);
         } else {
