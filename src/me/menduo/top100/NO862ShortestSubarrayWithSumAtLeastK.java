@@ -24,6 +24,7 @@ public class NO862ShortestSubarrayWithSumAtLeastK {
         Deque<Integer> deque = new ArrayDeque<>();
 
         for (int i = 0; i <= A.length; i++) {
+            //维持一个递增的队列，result是逼近某个值的最小值，突然变小的数是只会增加result的大小没有任何收益。
             while (!deque.isEmpty() && tmp[i] <= tmp[deque.getLast()])
                 deque.removeLast();
             while (!deque.isEmpty() && tmp[i] >= tmp[deque.getFirst()] + K)
