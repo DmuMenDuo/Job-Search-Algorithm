@@ -1,6 +1,6 @@
 package me.menduo.top100;
 
-public class Top5LongestPalindromicSubstring {
+public class NO5LongestPalindromicSubstring {
 
     private String longestPalindrome(String s) {
         int start=0,end=0;
@@ -25,7 +25,7 @@ public class Top5LongestPalindromicSubstring {
         return r-l-1;
     }
     public static void main(String[] args) {
-        Top5LongestPalindromicSubstring top5LongestPalindromicSubstring = new Top5LongestPalindromicSubstring();
+        NO5LongestPalindromicSubstring top5LongestPalindromicSubstring = new NO5LongestPalindromicSubstring();
 //        Example:
 //
 //        Input: "babad"
