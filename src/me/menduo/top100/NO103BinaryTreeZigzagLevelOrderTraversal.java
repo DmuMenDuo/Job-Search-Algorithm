@@ -21,11 +21,10 @@ public class NO103BinaryTreeZigzagLevelOrderTraversal {
         int flag = 0;
         while (!q1.isEmpty()) {
             List<Integer> ele = new ArrayList<>();
-            int zigzag = 0;
             while (!q1.isEmpty()) {
                 TreeNode tmp = q1.removeFirst();
                 ele.add(tmp.val);
-                if (zigzag == 0) {
+                if (flag == 0) {
                     if (tmp.left != null) q2.addLast(tmp.left);
                     if (tmp.right != null) q2.addLast(tmp.right);
                 } else {
