@@ -11,6 +11,15 @@ import java.util.Scanner;
  * @create: 2018-09-16 21:40
  **/
 public class Main {
+    /**
+     * x 为 n 除以 3 的余数
+     * y 为 n 除以 5 的余数
+     * z 为 n 除以 7 的余数
+     * <p>
+     * 给定 x y z 求 n
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         while (true) {
             Map<Integer, Integer> map = new HashMap<>();

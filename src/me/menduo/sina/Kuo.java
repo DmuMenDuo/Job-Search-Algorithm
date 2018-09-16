@@ -10,6 +10,16 @@ import java.util.Stack;
  * @create: 2018-09-16 22:05
  **/
 public class Kuo {
+    /**
+     * 括号匹配问题 找出最少需要添加几个括号让字符串中所有括号完全匹配
+     * <p>
+     * （） 0
+     * ([]) 0
+     * ((] 3
+     * ([)] 2
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Stack<Character> x = new Stack<>();
         Scanner sc = new Scanner(System.in);
