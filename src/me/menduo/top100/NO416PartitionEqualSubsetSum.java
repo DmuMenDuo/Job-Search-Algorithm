@@ -10,7 +10,7 @@ import java.util.Arrays;
  **/
 public class NO416PartitionEqualSubsetSum {
     /**
-     * dfs方法更快
+     * dfs方法更快 7ms
      * @param nums
      * @return
      */
