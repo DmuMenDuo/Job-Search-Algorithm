@@ -15,17 +15,16 @@ public class NO413ArithmeticSlices {
     public int numberOfArithmeticSlices(int[] A) {
         if(A==null || A.length <=2) return 0;
         int dp_cont = 0;
-        int dp_cons = 2;
+        int dp_cons = 0;
         for(int i=2;i<A.length;i++) {
             if(A[i]-A[i-1] == A[i-1]-A[i-2]) {
-                dp_cont += dp_cons - 1;
+                dp_cont += 1+dp_cons;
                 dp_cons++;
             }else{
                 //等差数列断掉，从新开始
-                dp_cons = 2;
+                dp_cons = 0;
             }
         }
-
         return dp_cont;
 
     }
