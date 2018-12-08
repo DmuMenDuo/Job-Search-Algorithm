@@ -6,6 +6,11 @@ import java.util.*;
 
 
 public class HanoTower2064 {
+    /**
+     * 杭电oj
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
         while(in.hasNextInt()){
