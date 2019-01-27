@@ -10,6 +10,10 @@ import java.util.Arrays;
  * @create: 2019-01-27 12:08
  **/
 public class NO174DungeonGame {
+    /**
+     * ![推倒图](http://pic.menduo.xyz/20190127152735.png)
+     * @param args
+     */
     public static void main(String[] args) {
         NO174DungeonGame no174DungeonGame = new NO174DungeonGame();
         no174DungeonGame.calculateMinimumHP(new int[][]{{-2,-3,3},{-5,-10,1},{10,30,-5}});
