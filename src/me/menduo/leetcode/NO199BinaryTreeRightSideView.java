@@ -3,8 +3,6 @@ package me.menduo.leetcode;
 import me.menduo.leetcode.struct.TreeNode;
 
 import java.util.*;
-import java.util.concurrent.LinkedBlockingDeque;
-
 /**
  * @program: LeetCode
  * @mail: menduo96@gmail.com
