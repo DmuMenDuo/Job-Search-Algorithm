@@ -22,7 +22,6 @@ public class NO880DecodedStringAtIndex {
             i--;
             if(Character.isDigit(chars[i])){
                 N/=chars[i]-'0';
-                K%=N;
             }else if (K%(N--)==0){
                 return chars[i]+"";
             }
