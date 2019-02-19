@@ -1,4 +1,4 @@
-package me.menduo.JZoffer;
+package me.menduo.jzoffer;
 
 /**
  * @program: LeetCode

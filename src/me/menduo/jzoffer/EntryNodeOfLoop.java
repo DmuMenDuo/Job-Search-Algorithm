@@ -1,4 +1,4 @@
-package me.menduo.JZoffer;
+package me.menduo.jzoffer;
 
 import me.menduo.leetcode.struct.ListNode;
 
