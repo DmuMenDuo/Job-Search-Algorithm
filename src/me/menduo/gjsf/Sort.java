@@ -34,6 +34,12 @@ public class Sort {
         return low;
     }
 
+    /**
+     * 这种交换算法一定要注意自己和自己交换的情况
+     * @param array
+     * @param m
+     * @param n
+     */
     private void swap(int[] array, int m, int n) {
         if (array[m] != array[n]) {
             array[m] ^= array[n];
@@ -44,7 +50,6 @@ public class Sort {
     }
 
     public static void main(String[] args) {
-        System.out.println(1 ^ 1 ^ 1);
         Sort sort = new Sort();
         int[] array = new int[]{21, 34, 74, 3, 20, 20, 3, 2, 56, 46, 6};
         int[] after_array = array.clone();
