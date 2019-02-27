@@ -10,25 +10,46 @@ import java.util.*;
  * @create: 2019-01-26 12:12
  **/
 public class NO199BinaryTreeRightSideView {
-    public List<Integer> rightSideView(TreeNode root) {
-        if(root==null) return new ArrayList<>();
-        List<Integer> result = new ArrayList<>();
-        Deque<TreeNode> pre = new ArrayDeque<>();
-        Deque<TreeNode> cur = new ArrayDeque<>();
-        pre.add(root);
-        while (!pre.isEmpty()){
-            result.add(pre.peekFirst().val);
-            while (!pre.isEmpty()){
-                TreeNode f = pre.removeFirst();
-                if(f.right!=null) cur.addLast(f.right);
-                if(f.left!=null) cur.addLast(f.left);
-            }
+//    public List<Integer> rightSideView(TreeNode root) {
+//        if(root==null) return new ArrayList<>();
+//        List<Integer> result = new ArrayList<>();
+//        Deque<TreeNode> pre = new ArrayDeque<>();
+//        Deque<TreeNode> cur = new ArrayDeque<>();
+//        pre.add(root);
+//        while (!pre.isEmpty()){
+//            result.add(pre.peekFirst().val);
+//            while (!pre.isEmpty()){
+//                TreeNode f = pre.removeFirst();
+//                if(f.right!=null) cur.addLast(f.right);
+//                if(f.left!=null) cur.addLast(f.left);
+//            }
+//
+//            Deque<TreeNode> tmp = cur;
+//            cur = pre;
+//            pre = tmp;
+//        }
+//        return result;
+//    }
 
-            Deque<TreeNode> tmp = cur;
-            cur = pre;
-            pre = tmp;
-        }
-        return result;
+    public List<Integer> rightSideView(TreeNode root) {
+       if(root==null) return new ArrayList<>();
+       List<Integer> result = new ArrayList<>();
+       Deque<TreeNode> pre = new ArrayDeque<>();
+       Deque<TreeNode> cur = new ArrayDeque<>();
+       pre.addFirst(root);
+       while (!pre.isEmpty()){
+           result.add(pre.peekFirst().val);
+           while (!pre.isEmpty()) {
+               TreeNode t = pre.pollFirst();
+               if(t.right!=null)cur.addFirst(t.right);
+               if(t.left!=null)cur.addFirst(t.left);
+           }
+
+           Deque<TreeNode> tmp = pre;
+           pre =cur;
+           cur = tmp;
+       }
+       return result;
     }
     public static void main(String[] args) {
         NO199BinaryTreeRightSideView no199BinaryTreeRightSideView = new NO199BinaryTreeRightSideView();
