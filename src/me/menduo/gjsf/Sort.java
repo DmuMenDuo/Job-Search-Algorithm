@@ -11,6 +11,25 @@ import java.util.Arrays;
 public class Sort {
 
 
+    public void heapSort(int[] array,int length) {
+        build(array,length);
+        swap(array,0,length);
+        if(length>0) heapSort(array,length-1);
+    }
+
+    private void build(int[] array,int length){
+        for (int i = (length-1)/2; i >=0 ; i--) {
+            if(i*2+1<=length &&array[i]<array[i*2+1]) {
+                swap(array, i, i * 2 + 1);
+            }
+
+            if(i*2+2<=length && array[i]<array[i*2+2]) {
+                swap(array, i, i * 2  + 2);
+            }
+
+        }
+    }
+
     public void quickSort(int[] array, int start, int end) {
         if (start == end) return;
 
@@ -49,11 +68,15 @@ public class Sort {
 
     }
 
+
+
     public static void main(String[] args) {
         Sort sort = new Sort();
         int[] array = new int[]{21, 34, 74, 3, 20, 20, 3, 2, 56, 46, 6};
         int[] after_array = array.clone();
         sort.quickSort(after_array, 0, after_array.length - 1);
+        after_array = array.clone();
+        sort.heapSort(after_array,after_array.length-1);
         System.out.println(Arrays.toString(after_array));
     }
 }
