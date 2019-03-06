@@ -1,6 +1,7 @@
 package me.menduo.gjsf;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * @program: LeetCode
@@ -36,6 +37,27 @@ public class Sort {
         int index = patition(array, start, end);
         if (index > start) quickSort(array, start, index - 1);
         if (index < end) quickSort(array, index + 1, end);
+    }
+
+    public void quickSort_Stack(int[] array,int start,int end) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(start);
+        stack.push(end);
+        while(!stack.empty()) {
+            int e = stack.pop();
+            int s = stack.pop();
+            int index =patition(array,s,e
+            );
+            if(index>s) {
+                stack.push(s);
+                stack.push(index-1);
+            }
+            if(index<e) {
+                stack.push(index+1);
+                stack.push(e);
+            }
+        }
+
     }
 
     private int patition(int[] array, int start, int end) {
@@ -77,6 +99,9 @@ public class Sort {
         sort.quickSort(after_array, 0, after_array.length - 1);
         after_array = array.clone();
         sort.heapSort(after_array,after_array.length-1);
+        System.out.println(Arrays.toString(after_array));
+        after_array = array.clone();
+        sort.quickSort_Stack(after_array,0,after_array.length-1);
         System.out.println(Arrays.toString(after_array));
     }
 }
