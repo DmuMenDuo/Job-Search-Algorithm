@@ -29,9 +29,28 @@ public class TreeNodeConvert {
         return realHead;
     }
 
+
+    private void convert(TreeNode root) {
+        if(root == null) return;
+        convert(root.left);
+
+        if(head==null){
+            head = root;
+            realHead = root;
+        }else {
+            head.right = root;
+            root.left = head;
+            head = root;
+        }
+        convert(root.right);
+    }
     public static void main(String[] args) {
         TreeNode root = createTree();
-        System.out.println(new TreeNodeConvert().Convert(root));
+        System.out.println(new TreeNodeConvert().Convert(root).val);
+        TreeNode root2 = createTree();
+        TreeNodeConvert treeNodeConvert = new TreeNodeConvert();
+        treeNodeConvert.convert(root2);
+        System.out.println(treeNodeConvert.realHead.val);
     }
 
     private static TreeNode createTree() {
