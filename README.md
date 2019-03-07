@@ -8,5 +8,6 @@
 - aiqiyi: 爱奇艺笔试题
 - jrtt: 今日头条
 - gjsf: 算法课相关的
+- tencent: 腾讯的笔试题
 - junitDesDemo: 可以忽略，模仿junit写的单元测试框架。
 - others: 其他，没归类
