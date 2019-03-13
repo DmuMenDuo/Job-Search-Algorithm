@@ -1,5 +1,7 @@
 package me.menduo.lock.learn;
 
+import java.util.concurrent.CyclicBarrier;
+
 /**
  * @program: Job-Search-Algorithm
  * @mail: menduo96@gmail.com
@@ -22,6 +24,5 @@ public class Main {
         consumer.consume();
         consumer.consume();
         producer.produce("啥玩意");
-
     }
 }
