@@ -19,6 +19,7 @@ public class Sort {
     }
 
     private void build(int[] array,int length){
+        //最后一个非叶子节点开始
         for (int i = (length-1)/2; i >=0 ; i--) {
             if(i*2+1<=length &&array[i]<array[i*2+1]) {
                 swap(array, i, i * 2 + 1);

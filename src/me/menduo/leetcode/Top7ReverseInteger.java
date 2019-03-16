@@ -28,6 +28,7 @@ public class Top7ReverseInteger {
             return (int)result;
         }
     }
+
     public int reverse2(int x) {
         int result=0;
         while(x!=0){
@@ -41,6 +42,7 @@ public class Top7ReverseInteger {
         }
         return result;
     }
+
     public static void main(String[] args) {
         int eg1 = 1534236469;
         int eg2 = -123;

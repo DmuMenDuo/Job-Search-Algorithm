@@ -1,5 +1,6 @@
 package me.menduo.lock.learn.cyclicbarrier;
 
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -30,6 +31,7 @@ public class Main {
         for (int i = 0; i <n ; i++) {
             new Writer(cyclicBarrier).start();
         }
+
 
     }
 }
