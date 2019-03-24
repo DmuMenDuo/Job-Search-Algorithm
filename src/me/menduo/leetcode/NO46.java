@@ -1,5 +1,8 @@
 package me.menduo.leetcode;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * @program: Job-Search-Algorithm
  * @mail: menduo96@gmail.com
@@ -31,4 +34,6 @@ public class NO46 {
         if(!flag) return "0";
         return sb.toString();
     }
+
+
 }

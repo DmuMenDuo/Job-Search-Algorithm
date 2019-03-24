@@ -92,6 +92,30 @@ public class Sort {
     }
 
 
+    private void merge (int[] array,int start,int mid,int end) {
+        int[] tmp = new int[array.length];
+        int i = start,j = mid+1, k = start;
+        while (i!=mid+1 && j != end+1) {
+            if(array[i]<=array[j]) tmp[k++] = array[i++];
+            else tmp[k++] = array[j++];
+        }
+        while (i != mid+1)
+            tmp[k++] = array[i++];
+        while (j!=end+1)
+            tmp[k++] = array[j++];
+        for (int l = start; l <= end ; l++) {
+            array[l] = tmp[l];
+        }
+    }
+
+    private void mergeSort(int[] array,int start,int end) {
+        if (start < end) {
+            int mid = start + (end-start)/2;
+            mergeSort(array,start,mid);
+            mergeSort(array,mid+1,end);
+            merge(array,start,mid,end);
+        }
+    }
 
     public static void main(String[] args) {
         Sort sort = new Sort();
@@ -103,6 +127,10 @@ public class Sort {
         System.out.println(Arrays.toString(after_array));
         after_array = array.clone();
         sort.quickSort_Stack(after_array,0,after_array.length-1);
+        System.out.println(Arrays.toString(after_array));
+
+        after_array = array.clone();
+        sort.mergeSort(after_array,0,after_array.length-1);
         System.out.println(Arrays.toString(after_array));
     }
 }
