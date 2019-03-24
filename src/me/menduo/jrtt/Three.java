@@ -40,8 +40,8 @@ public class Three {
             if(ratings[i] > ratings[i + 1] && candies[i] <= candies[i + 1]){
                 candies[i] = candies[i + 1] + 1;
             }
-            if(i==0 && ratings[i]>ratings[n-1] && candies[i] <= candies[i + 1]){
-                candies[i] = Math.min(ratings[n-1],ratings[i+1]) +1;
+            if(i==0 && ratings[i]>ratings[n-1]){
+                candies[i] = Math.min(ratings[n-1]+1,ratings[i+1]);
             }
         }
         int sum = 0;
