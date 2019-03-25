@@ -11,6 +11,8 @@ import java.util.Random;
  **/
 public class Shuffle {
     public int[]  shuffle(int[] array){
+        // 等概率 第一次 1/n 第二次 n-1/n * 1/n-1
+        // 产生的可能性总数相同 都是n!
         int[] result = array.clone();
         Random random = new Random();
         for (int i = 0; i < result.length ; i++) {
