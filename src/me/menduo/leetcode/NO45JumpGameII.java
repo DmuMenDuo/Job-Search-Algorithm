@@ -3,8 +3,8 @@ package me.menduo.leetcode;
 public class NO45JumpGameII {
     public int jump(int[] nums) {
         int times = 0;
-        int reach = 0;
-        int max = 0;
+        int reach = 0; // 之前能到达的最大距离
+        int max = 0; //当前可以达到的最大距离
         for(int i=0;i<nums.length;i++){
             if(reach<i){
                 times++;
