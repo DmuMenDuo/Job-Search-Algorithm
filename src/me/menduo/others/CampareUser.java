@@ -41,7 +41,8 @@ public class CampareUser {
         values.add(new Value(7,8));
         values.add(new Value(2,6));
 
-        values.sort((o1,o2) -> o1.start > o2.start ? 1:-1);
+        //values.sort((o1,o2) -> o1.start > o2.start ? 1:-1);
+        values.sort(Value::compare);
         System.out.println(Arrays.toString(values.toArray()));
     }
 }
