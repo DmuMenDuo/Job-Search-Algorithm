@@ -12,27 +12,23 @@ import java.util.Stack;
  **/
 public class NO84 {
     public int largestRectangleArea(int[] heights) {
-        if(heights == null && heights.length==0) return 0;
-        Stack<Integer> stack = new Stack<>();
-        int i = 0;
-        int max = 0;
-        int[] tmp = Arrays.copyOf(heights,heights.length+1);
-        while (i<tmp.length){
-            if(stack.isEmpty() || tmp[stack.peek()] <= tmp[i]) {
-                stack.push(i);
-                i++;
-            }else {
-                int x = stack.pop();
-                int width = stack.isEmpty()?i:i-stack.peek()-1;
-                max = Math.max(max,tmp[x] * width);
+        if (heights.length == 0) return 0;
+        Stack<Integer> stack = new Stack();
+        int res = 0;
+        for (int i = 0; i <= heights.length; i++) {
+            int curH = i == heights.length ? -1:heights[i];
+            while (!stack.isEmpty() && curH <= heights[stack.peek()]) {
+                int left = stack.pop();
+                int s = (stack.isEmpty() ? i : (i - stack.peek() - 1)) * heights[left];
+                res = Math.max(res, s);
             }
+            stack.push(i);
         }
-
-        return max;
+        return res;
     }
 
     public static void main(String[] args) {
         NO84 no84 =new NO84();
-        System.out.println(no84.largestRectangleArea(new int[]{2,1,2}));
+        System.out.println(no84.largestRectangleArea(new int[]{1,2,2}));
     }
 }
