@@ -15,11 +15,10 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * 多线程顺序打印1-100
  *
- * 1. 使用Object的wait和notify实现。当发现当前值不能输出时，就wait,否则输出并唤醒其他线程。synchronize
+ * 1. 使用Object的wait和notify实现。当发现当前值不能输出时，就wait,否则输出并唤醒其他线程。synchronize wait机制
  *
- * 2. 使用reentrantlock 锁，获得锁之后检测时候能打印，能就打印，否则 让出锁。
+ * 2. 使用reentrantlock 锁，获得锁之后检测时候能打印，能就打印，否则 让出锁。 block机制
  *
- * 3. val
  *
  */
 public class ThreadPrint implements Runnable{
@@ -38,7 +37,7 @@ public class ThreadPrint implements Runnable{
         while (value <= 100) {
             reentrantLock.lock();
             if (value<=100 && value % 3 == my) {
-                System.out.println(value++);
+                System.out.println(Thread.currentThread().getName() + "--->" +value++);
             }
             reentrantLock.unlock();
 
