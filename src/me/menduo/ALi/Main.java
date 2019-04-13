@@ -6,7 +6,6 @@ import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
-import java.util.regex.*;
 
 public class Main {
 
@@ -77,7 +76,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-        Scanner in = new Scanner("20,3");
+        Scanner in = new Scanner(System.in);
         String[] line = in.nextLine().split(",");
         int m = Integer.valueOf(line[0]);
         int k = Integer.valueOf(line[1]);;
