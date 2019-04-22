@@ -53,10 +53,7 @@ public class Main {
                         break;
                     } else if (array[cur] == ',' && array[cur - 1] == '"') {
                         break;
-                    } else if (cur >= array.length) {
-                        break;
-                    }
-                    else {
+                    } else {
                         sb.append(array[cur]);
                         cur++;
                     }
