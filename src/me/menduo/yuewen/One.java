@@ -31,5 +31,9 @@ public class One {
         System.out.println(b0 == b4); //true 拆箱
         System.out.println(b1 == b4); //false 装箱返回new的堆上对象 和 new的堆上对象
 
+        Bio bio = new Bio();
+    }
+    static class Bio {
+
     }
 }
