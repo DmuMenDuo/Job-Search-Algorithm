@@ -20,7 +20,6 @@ public class Main {
         }
     }
 
-
     private static String generateBio(String input) {
         // first_name,last_name,email,interests,notes,city,age
         //"John ""Mo""",Smith,sfn@flkaei.km,biking and hiking,,"Seattle, WA",23
@@ -48,7 +47,7 @@ public class Main {
                     if (array[cur] == '"' && array[cur + 1] == '"') {
                         cur++;
                         sb.append(array[cur++]);
-                    } else if (array[cur] == '"' && array[cur + 1] == ',') {
+                    } else if (array[cur] == '"' && (cur+1 >= array.length || array[cur + 1] == ',')) {
                         cur++;
                         break;
                     } else if (array[cur] == ',' && array[cur - 1] == '"') {
@@ -64,7 +63,7 @@ public class Main {
                 }
             }
             bio.add(sb.toString());
-            cur++;
+            cur++; //这里处理最后的逗号
         }
     }
 
@@ -73,12 +72,13 @@ public class Main {
         // John "Mo", 23 years old, is from Seattle, WA and is interested in biking and
         // hiking.
         // first_name,last_name,email,interests,notes,city,age
-        StringBuilder sb = new StringBuilder();
-        sb.append(bio.get(0)).append(", ")
-                .append(bio.get(6)).append(" years old, is from ")
-                .append(bio.get(5)).append(" and is interested in ")
-                .append(bio.get(3)).append(".");
-        return sb.toString();
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(bio.get(0)).append(", ")
+//                .append(bio.get(6)).append(" years old, is from ")
+//                .append(bio.get(5)).append(" and is interested in ")
+//                .append(bio.get(3)).append(".");
+        String sb = String.format("%s, %s years old, is from %s and is interested in %s",bio.get(0),bio.get(6),bio.get(5),bio.get(3));
+        return sb;
     }
 
 
